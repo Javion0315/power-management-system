@@ -29,20 +29,23 @@ We focus on providing beautiful interactive Dashboards out of the box, and helpi
 * Enable interactivity by providing event handling on dashboard level
 * Streamline dynamic updates of dashboard data, for example based on user interaction with dashboard
 * Even dynamically generate Dashboard itself based on the data - thanks to declarative approach   
-  
+
+## Fork from dashblocks-template repo
+https://github.com/slanatech/dashblocks-template.git
+
 
 ## Quick start
 
-Clone `dashblocks-template` repo: 
+Clone `power-management-system` repo: 
 
 ```bash
-$ git clone https://github.com/slanatech/dashblocks-template.git
+$ git clone https://github.com/Javion0315/power-management-system.git
 ```
 
 Install dependencies:
 
 ```bash
-$ cd dashblocks-template
+$ cd power-management-system
 $ yarn install
 ```
 
@@ -52,15 +55,8 @@ Run `serve`:
 $ yarn run serve
 ```
 
-`dashblocks-template` is set up using [vue-cli](https://github.com/vuejs/vue-cli), you will see standard `vue-cli` scripts in `package.json`: `serve`, `build` ...
+`power-management-system` is set up using [vue-cli](https://github.com/vuejs/vue-cli), you will see standard `vue-cli` scripts in `package.json`: `serve`, `build` ...
 [Quasar Framework](https://quasar.dev/) is configured using Vue CLI Quasar Plugin. 
-
-
-## Enhancements and Bug Reports
-
-If you find a bug, or have an enhancement in mind please post [issues](https://github.com/slanatech/dashblocks-template/issues)
-
-test1 test2 test3
 
 ## License
  
