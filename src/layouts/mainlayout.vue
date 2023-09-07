@@ -14,7 +14,7 @@
 				/>
 
 				<q-toolbar-title v-if="!smallScreen" style="padding-left: 4px">
-					dashblocks.io
+					沙崙能源管理系統
 				</q-toolbar-title>
 
 				<q-space></q-space>

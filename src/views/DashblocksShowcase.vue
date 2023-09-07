@@ -1,5 +1,6 @@
 <template>
-	<q-page class="ub-page">
+	<q-page class="ub-page" v-if="weatherData">
+		{{ weatherData.locationsName }}
 		<db-dashboard v-if="ready" :dbspec="dbspec" :dbdata="dbdata" :dark="dark">
 		</db-dashboard>
 	</q-page>
@@ -9,6 +10,7 @@
 import { DbData, DbColors } from 'dashblocks';
 import { demodashboard } from '../mixins/demodashboard';
 import { mapState } from 'vuex';
+import axios from 'axios';
 
 export default {
 	name: 'DashblocksShowcase',
@@ -177,14 +179,39 @@ export default {
 				],
 			},
 			ready: false,
+			weatherData: null,
 		};
 	},
 	mounted() {
 		// Initialize dashboard data
 		this.initialize();
+		this.getWeatherReport();
+		this.getRealtimeStatus();
+		this.getHistoryTrend();
 		this.ready = true;
 	},
 	methods: {
+		getWeatherReport() {
+			axios.get('https://www.slgesc.nat.gov.tw/WeatherReport').then((res) => {
+				if (res.data) {
+					this.weatherData = res.data.records.locations[0];
+				}
+			});
+		},
+		getRealtimeStatus() {
+			axios.get('https://www.slgesc.nat.gov.tw/RealtimeStatus').then((res) => {
+				console.log(res, 8888);
+			});
+		},
+		getHistoryTrend() {
+			axios
+				.get(
+					'https://www.slgesc.nat.gov.tw/HistoryTrend/RdCenter:ITRI:exhibition/generating/Min/1693838694636/1694097894638'
+				)
+				.then((res) => {
+					console.log(res, 22222);
+				});
+		},
 		initialize: function () {
 			// Init dashboard color scheme from state
 			this.dbspec.colorScheme = this.dashboardColorScheme;
