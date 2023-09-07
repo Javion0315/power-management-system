@@ -235,7 +235,7 @@ export default {
   }
   /* This makes thumb less prominent in dark mode */
   .q-toggle--dark .q-toggle__thumb:after {
-    opacity: 0.7;
+    opacity: 0.9;
   }
 }
 </style>

@@ -5,7 +5,7 @@
 //import { dbColors } from 'dashblocks';
 
 const state = {
-  dark: (localStorage['ub-dark-mode'] || 'false') === 'true',
+  dark: true,
   menuAutoExpand: (localStorage['ub-menu-auto-expand'] || 'false') === 'true',
   menuMini: (localStorage['ub-menu-mini'] || 'false') === 'true',
   dashboardColorScheme: localStorage['ub-dashboard-color-scheme'] || 'Standard'
@@ -43,7 +43,9 @@ const actions = {
     commit('SET_MENU_MINI', { menuMini: menuMini });
   },
   setDashboardColorScheme({ commit }, { dashboardColorScheme }) {
-    commit('SET_DASHBOARD_COLOR_SCHEME', { dashboardColorScheme: dashboardColorScheme });
+    commit('SET_DASHBOARD_COLOR_SCHEME', {
+      dashboardColorScheme: dashboardColorScheme
+    });
   }
 };
 

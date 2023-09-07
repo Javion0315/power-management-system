@@ -1,5 +1,6 @@
 <template>
-  <db-dashboard v-if="ready" :dbspec="dbspec" :dbdata="dbdata" :dark="isDark"> </db-dashboard>
+  <db-dashboard v-if="ready" :dbspec="dbspec" :dbdata="dbdata" :dark="isDark">
+  </db-dashboard>
 </template>
 
 <script>
@@ -9,7 +10,7 @@ export default {
   name: 'SampleDashboard',
   data() {
     return {
-      isDark: false,
+      isDark: true,
       dbdata: new DbData(),
       // Declare Dashboard Layout. Add widgets to your dashboard, specifying how many columns and rows
       // each widget takes. Dashblocks provides 16-columns CSS Grid layout.
@@ -79,7 +80,11 @@ export default {
       let dthData = [];
       let sTS = Date.now() - 100 * 3600 * 1000;
       for (let i = 0; i < 100; i++) {
-        dthData.push([new Date(sTS + i * 3600 * 1000), Math.random(), Math.random()]);
+        dthData.push([
+          new Date(sTS + i * 3600 * 1000),
+          Math.random(),
+          Math.random()
+        ]);
       }
 
       this.dbdata.setWData('w1', {

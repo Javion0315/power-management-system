@@ -4,8 +4,8 @@
   "private": true,
   "author": "https://github.com/sv2",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "serve": "SET NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service serve",
+    "build": "SET NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint",
@@ -15,7 +15,10 @@
   "dependencies": {
     "@quasar/extras": "^1.8.2",
     "core-js": "^3.6.5",
+    "node-sass": "^9.0.0",
     "quasar": "^1.12.3",
+    "sass": "^1.66.1",
+    "sass-loader": "^10",
     "vue": "^2.6.11",
     "vue-router": "^3.3.2",
     "vuex": "^3.4.0"
@@ -37,14 +40,12 @@
     "eslint-plugin-prettier": "^3.1.3",
     "eslint-plugin-vue": "^6.2.2",
     "lint-staged": "^8.1.5",
-    "node-sass": "^4.13.1",
-    "release-it": "^13.5.4",
-    "sass-loader": "^8.0.2",
-    "vue-cli-plugin-quasar": "^2.0.0",
-    "vue-template-compiler": "^2.6.11",
-    "webpack-bundle-analyzer": "^3.6.0",
     "ramda": "^0.27.0",
-    "vue-good-table": "^2.18.0"
+    "release-it": "^13.5.4",
+    "vue-cli-plugin-quasar": "^2.0.0",
+    "vue-good-table": "^2.18.0",
+    "vue-template-compiler": "^2.6.11",
+    "webpack-bundle-analyzer": "^3.6.0"
   },
   "eslintConfig": {
     "root": true,

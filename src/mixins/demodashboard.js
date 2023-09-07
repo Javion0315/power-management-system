@@ -9,7 +9,6 @@ export const demodashboard = {
   },
   watch: {
     dashboardColorScheme(val) {
-      console.log(`dashboardColorScheme changed to ${val}`);
       this.$set(this.dbspec, 'colorScheme', val);
     }
   }
